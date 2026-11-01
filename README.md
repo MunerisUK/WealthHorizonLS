@@ -7,7 +7,7 @@ you plan ahead. I built it to replace Microsoft Money, and it can read a Money
 This repository is for beta testers. It holds the instructions and the Docker
 Compose file you need to run WealthHorizon on your own hardware. It does not
 hold the source code. The software itself comes as Docker images, and you need
-a licence key from the WealthHorizon store to keep using it.
+a licence key from the WealthHorizon store to use it.
 
 > **Not financial advice.** The planning, tax and forecast pages work from the
 > figures you enter. They help you think things through. They are not advice,
@@ -54,9 +54,10 @@ your network, your firewall or reaching your server from outside your home.
    becomes the System Administrator.
 
 5. Enter your licence key: **System Admin → Licence → Activate on this
-   machine**. Until you do, WealthHorizon runs as an evaluation for a limited
-   time. After that it becomes read-only until a key is entered. You can always
-   read and export your data, whatever the state of the licence.
+   machine**. The machine needs an internet connection the first time, so the
+   key can be checked. Until a key is active you can sign in and look around,
+   but you cannot add or change anything. Whatever happens to the licence
+   later, you can always read and export your data.
 
 6. Import your Money file, or start entering accounts. The beta brief explains
    what the import keeps.
