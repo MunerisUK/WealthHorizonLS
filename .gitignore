@@ -1,0 +1,5 @@
+# Your settings and passwords.
+.env
+
+# Your database, documents and backups.
+data/
