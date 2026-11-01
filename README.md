@@ -133,6 +133,13 @@ first.
 - **Security problems:** see [SECURITY.md](SECURITY.md). Please do not open a
   public issue.
 
+## Privacy
+
+Your financial data stays on your machine; Muneris cannot see it. The small
+amount of information that leaves your installation — a licence check, optional
+price updates, and any feedback you choose to send — is described in
+[PRIVACY.md](PRIVACY.md).
+
 ## Licence
 
 WealthHorizon is proprietary software owned by Muneris Management Ltd. See
