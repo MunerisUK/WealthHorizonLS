@@ -1,4 +1,4 @@
-# WealthHorizon beta. See README.md for how to install, update and back up.
+# WealthHorizon. See README.md for how to install, update and back up.
 #
 # Three containers on a private network: the database, the API and the web
 # app. Only the web app's port is published, so the database is never
@@ -41,7 +41,7 @@ services:
       PGDATABASE: wealthhorizon
       JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
       WH_CREDENTIAL_KEY: ${WH_CREDENTIAL_KEY:-}
-      # A household-only install. The beta licence does not cover adviser or
+      # A household-only install. The licence does not cover adviser or
       # firm use.
       WH_ADVISORY: "off"
       # Never load demonstration data into a real install.

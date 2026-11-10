@@ -1,10 +1,10 @@
-# WealthHorizon beta
+# WealthHorizon
 
 WealthHorizon keeps track of your accounts, investments and pensions, and helps
 you plan ahead. I built it to replace Microsoft Money, and it can read a Money
 `.mny` file directly.
 
-This repository is for beta testers. It holds the instructions and the Docker
+This repository is for people running WealthHorizon. It holds the instructions and the Docker
 Compose file you need to run WealthHorizon on your own hardware. It does not
 hold the source code. The software itself comes as Docker images, and you need
 a licence key from the WealthHorizon store to use it.
@@ -59,8 +59,7 @@ your network, your firewall or reaching your server from outside your home.
    but you cannot add or change anything. Whatever happens to the licence
    later, you can always read and export your data.
 
-6. Import your Money file, or start entering accounts. The beta brief explains
-   what the import keeps.
+6. Import your Money file, or start entering accounts.
 
 ## Your data
 

@@ -3,7 +3,7 @@
 > **Draft.** This notice was prepared by the product team and has not been
 > reviewed by a solicitor or a data-protection specialist. Have it reviewed,
 > and fill in the details marked `[in brackets]`, before you rely on it or
-> publish it. It is written for the beta programme.
+> publish it.
 
 **Last updated:** [date] · **Version:** 0.1 (draft)
 
@@ -80,7 +80,7 @@ server has been up, the **date** (not the time) of the last sign-in, your
 licence instance identifier and the edition. It carries nothing about your
 finances and no account names.
 
-- **Why:** to understand, during the beta, whether an installation is active.
+- **Why:** to understand whether installations are active and up to date.
 - **Lawful basis:** your consent (you switch it on, and can switch it off).
 
 ### 5. Prices, exchange rates and optional connections
@@ -91,7 +91,7 @@ requests carry the ticker symbols and currency codes, and your IP address,
 but no name and no account details.
 
 If you connect **Trading 212**, your read-only API key is used to fetch your
-holdings from Trading 212. **Open Banking is not active in the beta.** Email
+holdings from Trading 212. **Open Banking is not currently active.** Email
 sending is optional and, if you set it up, goes through the mail server **you**
 configure — not through us.
 
@@ -121,7 +121,7 @@ each provider.]
   years).
 - **Feedback issues:** for as long as they are useful to the product, then
   closed and retained in the tracker's history.
-- **Heartbeat records:** [retention period] during the beta.
+- **Heartbeat records:** [retention period].
 
 Your own data on your own machine is kept, and deleted, by you.
 
@@ -137,5 +137,5 @@ Office** (ico.org.uk), though we would be glad to put things right first.
 
 ## Changes to this notice
 
-We will update this notice as the product changes — in particular before the
-beta becomes a paid product — and will note the date at the top.
+We will update this notice as the product changes, and will note the date at
+the top.
