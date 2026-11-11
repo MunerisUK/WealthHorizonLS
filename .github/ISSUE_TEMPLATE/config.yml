@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: A problem or idea inside the app
+    url: https://github.com/MunerisUK/WealthHorizonLS#reporting-problems
+    about: Use the Feedback page in WealthHorizon. It reaches me privately, with the details I need.
+  - name: A security problem
+    url: https://github.com/MunerisUK/WealthHorizonLS/blob/main/SECURITY.md
+    about: Please email instead of opening a public issue.

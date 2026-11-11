@@ -1,0 +1,66 @@
+# WealthHorizon. See README.md for how to install, update and back up.
+#
+# Three containers on a private network: the database, the API and the web
+# app. Only the web app's port is published, so the database is never
+# reachable from your network. The web app shares the API container's network
+# so it can pass requests straight through to it.
+#
+# Settings go in .env, next to this file (copy .env.example to start).
+
+name: wealthhorizon
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wealth
+      POSTGRES_PASSWORD: ${PGPASSWORD:?set PGPASSWORD in .env}
+      POSTGRES_DB: wealthhorizon
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wealth -d wealthhorizon"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [wealthhorizon]
+
+  api:
+    image: ghcr.io/munerisuk/wealthhorizonls-backend:${WH_TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PORT: 4000
+      PGHOST: db
+      PGPORT: 5432
+      PGUSER: wealth
+      PGPASSWORD: ${PGPASSWORD:?set PGPASSWORD in .env}
+      PGDATABASE: wealthhorizon
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+      WH_CREDENTIAL_KEY: ${WH_CREDENTIAL_KEY:-}
+      # A household-only install. The licence does not cover adviser or
+      # firm use.
+      WH_ADVISORY: "off"
+      # Never load demonstration data into a real install.
+      WH_SEED_DEMO: "0"
+    volumes:
+      - ./data/documents:/data/documents
+      # Set the backup folder in the app to /backups to write backups here.
+      - ./data/backups:/backups
+    ports:
+      # The web app's port. It is published here because the web container
+      # shares this container's network.
+      - "${WH_PORT:-8082}:8082"
+    networks: [wealthhorizon]
+
+  web:
+    image: ghcr.io/munerisuk/wealthhorizonls-frontend:${WH_TAG:-latest}
+    restart: unless-stopped
+    network_mode: "service:api"
+    depends_on: [api]
+
+networks:
+  wealthhorizon: {}
