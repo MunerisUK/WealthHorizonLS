@@ -28,7 +28,6 @@ The data controller for the information described below is:
 company number 09096411.
 Registered office: 20-22 Wenlock Road, London, England, N1 7GU.
 Contact: **info@muneris.co.uk**.
-[If registered with the ICO: ICO registration number [number].]
 
 For questions about this notice or your personal data, email the address
 above with "Privacy" in the subject line.
@@ -120,7 +119,7 @@ each provider.]
   years).
 - **Feedback issues:** for as long as they are useful to the product, then
   closed and retained in the tracker's history.
-- **Heartbeat records:** [retention period].
+- **Heartbeat records:** 12 months, then deleted.
 
 Your own data on your own machine is kept, and deleted, by you.
 
