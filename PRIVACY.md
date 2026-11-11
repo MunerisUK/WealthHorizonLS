@@ -26,7 +26,7 @@ The data controller for the information described below is:
 
 **Muneris Management Ltd**, a company registered in England and Wales,
 company number 09096411.
-Registered office: [registered office address].
+Registered office: 20-22 Wenlock Road, London, England, N1 7GU.
 Contact: **info@muneris.co.uk**.
 [If registered with the ICO: ICO registration number [number].]
 
@@ -48,8 +48,7 @@ name, email, order and the licence key. We do not see your card number.
 ### 2. Checking your licence
 
 When the software activates and then checks your key, it contacts the
-licensing service (**Lemon Squeezy**) and our own check endpoint. These
-requests carry your **licence key** and an **identifier for the machine**
+licensing service (**Lemon Squeezy**). These requests carry your **licence key** and an **identifier for the machine**
 you activated on, and, like any internet request, your installation's **IP
 address**. They carry nothing about your finances.
 
