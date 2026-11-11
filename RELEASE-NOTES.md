@@ -3,12 +3,12 @@
 What changes in each build of WealthHorizon. The newest is at the top.
 
 Each build is published as a Docker image tag with the same name, for example
-`B1148`. To run a particular build, set `WH_TAG` in your `.env` file (see
+`B1047`. To run a particular build, set `WH_TAG` in your `.env` file (see
 [Updating](README.md#updating)). Back up before every update.
 
 ---
 
-## B1148: first release
+## B1047: first release
 
 *11 November 2026*
 

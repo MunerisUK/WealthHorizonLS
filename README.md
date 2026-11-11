@@ -101,7 +101,7 @@ Database changes are applied automatically when the new version starts.
 What changed in each build is in the [release notes](RELEASE-NOTES.md).
 
 To run a particular build instead of the latest, set `WH_TAG` in `.env`, for
-example `WH_TAG=B1148`, and run the two commands again. This is also how you go
+example `WH_TAG=B1047`, and run the two commands again. This is also how you go
 back to an earlier build if a new one causes you a problem.
 
 ## Using it away from home
