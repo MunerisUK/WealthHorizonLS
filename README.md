@@ -59,7 +59,8 @@ your network, your firewall or reaching your server from outside your home.
    but you cannot add or change anything. Whatever happens to the licence
    later, you can always read and export your data.
 
-6. Import your Money file, or start entering accounts.
+6. Import your Money file, or start entering accounts. The
+   [user guide](docs/user-guide.md) walks you through it.
 
 ## Your data
 
@@ -97,6 +98,7 @@ world only for these things:
    ```
 
 Database changes are applied automatically when the new version starts.
+What changed in each build is in the [release notes](RELEASE-NOTES.md).
 
 To run a particular build instead of the latest, set `WH_TAG` in `.env`, for
 example `WH_TAG=B1070`, and run the two commands again. This is also how you go
