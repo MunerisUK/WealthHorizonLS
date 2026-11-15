@@ -4,14 +4,55 @@ WealthHorizon keeps track of your accounts, investments and pensions, and helps
 you plan ahead. I built it to replace Microsoft Money, and it can read a Money
 `.mny` file directly.
 
-This repository is for people running WealthHorizon. It holds the instructions and the Docker
-Compose file you need to run WealthHorizon on your own hardware. It does not
-hold the source code. The software itself comes as Docker images, and you need
-a licence key from the WealthHorizon store to use it.
+This repository is for people running WealthHorizon. It holds the instructions,
+the Windows installer and the Docker Compose file you need to run WealthHorizon
+on your own hardware. It does not hold the source code. You need a licence key
+from the WealthHorizon store to use it.
+
+There are two ways to run it:
+
+- **On a Windows 10 or 11 PC:** one installer, nothing else to set up. See
+  [Install on Windows](#install-on-windows).
+- **With Docker** on a NAS, a server or a PC: see [Before you start](#before-you-start).
 
 > **Not financial advice.** The planning, tax and forecast pages work from the
 > figures you enter. They help you think things through. They are not advice,
 > a recommendation or a promise.
+
+## Install on Windows
+
+You need a 64-bit PC with Windows 10 or 11, and a licence key from the
+WealthHorizon store. You do not need Docker.
+
+1. Download `WealthHorizon-Setup-B….exe` from the
+   [latest release](https://github.com/MunerisUK/WealthHorizonLS/releases/latest).
+2. Run it and say yes to the Windows administrator prompt. If Windows says
+   **"Windows protected your PC"**, choose **More info**, then **Run anyway**.
+   The installer is not code-signed yet.
+3. Tick **Let other devices on my home network open WealthHorizon** only if you
+   want to use it from a phone, tablet or Chromebook at home. It works only on
+   networks Windows treats as private.
+4. Setup waits while WealthHorizon starts. The first start sets up the database
+   and takes a minute or two. Then it opens WealthHorizon in your browser. You
+   can also use the **WealthHorizon** shortcut, or go to `http://localhost:8082`.
+5. Choose **Register** and create your account. The first account becomes the
+   administrator.
+6. Enter your licence key: **System Admin → Licence → Activate on this machine**.
+
+WealthHorizon runs quietly in the background as a Windows service and starts
+with your PC.
+
+- **Your data** is in `C:\ProgramData\WealthHorizon`. Only administrators can
+  open it. Make backups in the app and copy them to another drive.
+- **To update,** download the newer installer and run it over the top. Your data
+  is kept.
+- **To remove it,** use **Settings → Apps → WealthHorizon**. Your data is kept
+  until you delete `C:\ProgramData\WealthHorizon` yourself, so reinstalling picks
+  it up again.
+
+The rest of this page is about running WealthHorizon with Docker. The sections
+on [your data](#your-data), [using it away from home](#using-it-away-from-home)
+and [reporting problems](#reporting-problems) apply to Windows too.
 
 ## Before you start
 
