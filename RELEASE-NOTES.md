@@ -2,9 +2,50 @@
 
 What changes in each build of WealthHorizon. The newest is at the top.
 
-Each build is published as a Docker image tag with the same name, for example
-`B1047`. To run a particular build, set `WH_TAG` in your `.env` file (see
-[Updating](README.md#updating)). Back up before every update.
+Builds come two ways:
+
+- **Windows:** an installer, `WealthHorizon-Setup-B….exe`, on the
+  [Releases](https://github.com/MunerisUK/WealthHorizonLS/releases) page. To
+  update, run the newer installer over the top.
+- **Docker:** an image tag with the build's name, for example `B1047`. To run a
+  particular build, set `WH_TAG` in your `.env` file (see
+  [Updating](README.md#updating)).
+
+Back up before every update.
+
+---
+
+## B1067: WealthHorizon for Windows
+
+*16 November 2026*
+
+**WealthHorizon now installs on Windows 10 and 11 without Docker.** Download
+`WealthHorizon-Setup-B1067.exe` from the
+[latest release](https://github.com/MunerisUK/WealthHorizonLS/releases/latest)
+and run it. See [Install on Windows](README.md#install-on-windows).
+
+This build is the Windows installer only. Docker users stay on B1047 for now;
+the next Docker build will include everything below.
+
+New:
+
+- **Stocks & Shares, under Portfolio.** All your investment accounts together
+  as one portfolio. Each account has its own setting for whether it appears
+  there.
+- **Banks and providers for the UK, the US and Ireland**, with their logos, to
+  choose from when you add an account.
+
+Fixed:
+
+- **Money files:** credit cards no longer come in as bank accounts, and a Money
+  Home & Business file's receivables and sales tax come in as an asset and a
+  loan.
+- **Statements:** an OFX or QIF download is read for what it is, whatever the
+  file is called. An American Express `.csv` no longer reads charges as
+  deposits. QIF and OFX files can be chosen on an iPad.
+- **Planning:** "Are you tracking to plan?" compares like with like. A plan
+  that starts in a past year no longer grows today's balances through the years
+  already gone.
 
 ---
 
