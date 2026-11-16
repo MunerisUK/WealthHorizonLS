@@ -9,11 +9,14 @@ the Windows installer and the Docker Compose file you need to run WealthHorizon
 on your own hardware. It does not hold the source code. You need a licence key
 from the WealthHorizon store to use it.
 
-There are two ways to run it:
+There are three ways to run it:
 
 - **On a Windows 10 or 11 PC:** one installer, nothing else to set up. See
   [Install on Windows](#install-on-windows).
-- **With Docker** on a NAS, a server or a PC: see [Before you start](#before-you-start).
+- **On a QNAP or Synology NAS,** point and click in the NAS's own container
+  app. See [Install on a QNAP or Synology NAS](#install-on-a-qnap-or-synology-nas).
+- **With Docker** on a NAS, a server or a PC, from the command line: see
+  [Before you start](#before-you-start).
 
 > **Not financial advice.** The planning, tax and forecast pages work from the
 > figures you enter. They help you think things through. They are not advice,
@@ -102,6 +105,76 @@ your network, your firewall or reaching your server from outside your home.
 
 6. Import your Money file, or start entering accounts. The
    [user guide](docs/user-guide.md) walks you through it.
+
+## Install on a QNAP or Synology NAS
+
+This is the same Docker setup, done in the NAS's own container app instead of
+the command line. You need:
+
+- a QNAP with **Container Station 3**, or a Synology with **Container Manager**
+  (DSM 7.2 or later)
+- a NAS with a **64-bit** processor (Intel, AMD or ARM64). Older 32-bit ARM
+  models cannot run WealthHorizon
+- a licence key from the WealthHorizon store
+
+### 1. Prepare the settings
+
+1. Open [docker-compose.yml](docker-compose.yml) here, click **Raw**, and copy
+   everything.
+2. Make two long random passwords, using **letters and numbers only** (no
+   symbols): one of about 48 characters and one of about 64. A password
+   manager's generator is the easiest way.
+3. Paste the file into a text editor and change these lines:
+   - Both lines that say `${PGPASSWORD:?set PGPASSWORD in .env}`: replace all
+     of that with your **first** password. It must be the same in both places.
+   - The line that says `${JWT_SECRET:?set JWT_SECRET in .env}`: replace all of
+     that with your **second** password.
+
+   Keep this edited copy somewhere safe and private. It holds your passwords.
+
+### 2a. On a QNAP (Container Station)
+
+1. Open **Container Station → Applications → Create**.
+2. Name the application `wealthhorizon`.
+3. Paste your edited file into the YAML box.
+4. Change the three `./data/` paths to a folder on a share, so your data is
+   easy to find and back up. For example:
+   - `./data/pgdata` becomes `/share/Container/wealthhorizon/pgdata`
+   - `./data/documents` becomes `/share/Container/wealthhorizon/documents`
+   - `./data/backups` becomes `/share/Container/wealthhorizon/backups`
+5. Click **Validate**, then **Create**.
+
+### 2b. On a Synology (Container Manager)
+
+1. In **File Station**, make a folder for it, for example
+   `docker/wealthhorizon`.
+2. Open **Container Manager → Project → Create**.
+3. Name the project `wealthhorizon`, and choose the folder you just made as
+   the **Path**.
+4. For **Source**, choose **Create docker-compose.yml** and paste your edited
+   file.
+5. Click **Next** until it finishes. Leave **Web portal** off. Your data goes
+   in the `data` folder inside the project folder.
+
+### 3. Open it and activate
+
+1. The first start sets up the database and takes a minute or two.
+2. Open `http://<your-nas>:8082` in a browser, using your NAS's address or
+   name. If something else on your NAS already uses port 8082, change the left
+   side of `"${WH_PORT:-8082}:8082"` to another port, for example
+   `"8090:8082"`, and use that port instead.
+3. Choose **Register** and create your account. The first account becomes the
+   administrator.
+4. Enter your licence key: **System Admin → Licence → Activate on this
+   machine**.
+
+**To update:** make a backup in the app first. Then, in Container Station or
+Container Manager, pull the latest `wealthhorizonls-backend` and
+`wealthhorizonls-frontend` images and restart the application or project. The
+exact buttons differ between versions of the NAS software.
+
+If it does not start, look at the logs of the `api` container in Container
+Station or Container Manager. They say what went wrong.
 
 ## Your data
 
