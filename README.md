@@ -40,7 +40,9 @@ WealthHorizon store. You do not need Docker.
    can also use the **WealthHorizon** shortcut, or go to `http://localhost:8082`.
 5. Choose **Register** and create your account. The first account becomes the
    administrator.
-6. Enter your licence key: **System Admin → Licence → Activate on this machine**.
+6. Enter your licence key: WealthHorizon asks for it straight after you
+   register. Paste it in and click **Activate**. (If you chose "I'll do this
+   later", it is under **System Admin → Licence → Activate on this machine**.)
 
 WealthHorizon runs quietly in the background as a Windows service and starts
 with your PC.
@@ -97,8 +99,9 @@ your network, your firewall or reaching your server from outside your home.
 4. Open `http://<your-server>:8082` in a browser. The first account you create
    becomes the System Administrator.
 
-5. Enter your licence key: **System Admin → Licence → Activate on this
-   machine**. The machine needs an internet connection the first time, so the
+5. Enter your licence key: WealthHorizon asks for it straight after you
+   register. Paste it in and click **Activate**. (If you chose "I'll do this
+   later", it is under **System Admin → Licence → Activate on this machine**.) The machine needs an internet connection the first time, so the
    key can be checked. Until a key is active you can sign in and look around,
    but you cannot add or change anything. Whatever happens to the licence
    later, you can always read and export your data.
@@ -165,8 +168,9 @@ the command line. You need:
    `"8090:8082"`, and use that port instead.
 3. Choose **Register** and create your account. The first account becomes the
    administrator.
-4. Enter your licence key: **System Admin → Licence → Activate on this
-   machine**.
+4. Enter your licence key: WealthHorizon asks for it straight after you
+   register. Paste it in and click **Activate**. (If you chose "I'll do this
+   later", it is under **System Admin → Licence → Activate on this machine**.)
 
 **To update:** make a backup in the app first. Then, in Container Station or
 Container Manager, pull the latest `wealthhorizonls-backend` and
