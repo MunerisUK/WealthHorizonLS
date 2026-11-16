@@ -15,6 +15,28 @@ Back up before every update.
 
 ---
 
+## B1069: the licence key is asked for first
+
+*16 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1069.exe` on the
+  [latest release](https://github.com/MunerisUK/WealthHorizonLS/releases/latest).
+  Run it over the top of B1067; your data is kept.
+- **Docker:** tag `B1069`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **A new install no longer stops on its first screen with
+  "LICENCE_REQUIRED".** WealthHorizon now asks for your licence key straight
+  after you register, in plain words: paste it in and click **Activate**, or
+  choose **I'll do this later**. Your home country and date of birth are saved
+  either way.
+- **When a change needs a licence key, WealthHorizon says so in a sentence**
+  instead of showing a code.
+
+---
+
 ## B1067: WealthHorizon for Windows
 
 *16 November 2026*

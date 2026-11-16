@@ -34,8 +34,9 @@ the [README](../README.md).
 1. Open `http://<your-server>:8082` in a browser.
 2. Choose **Register** and create your account. The first account on a new
    install becomes the **System Administrator**, so make this one yours.
-3. Enter your licence key: **System Admin → Licence → Activate on this
-   machine**. Until a key is active you can look around, but you cannot add or
+3. Enter your licence key: WealthHorizon asks for it straight after you
+   register. Paste it in and click **Activate**. (If you chose "I'll do this
+   later", it is under **System Admin → Licence → Activate on this machine**.) Until a key is active you can look around, but you cannot add or
    change anything.
 4. Turn on **two-factor authentication**: open your profile, then
    **Security**. It asks for a code from an authenticator app when you sign
