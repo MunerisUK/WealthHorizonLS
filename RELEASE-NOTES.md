@@ -24,8 +24,8 @@ Back up before every update.
 [latest release](https://github.com/MunerisUK/WealthHorizonLS/releases/latest)
 and run it. See [Install on Windows](README.md#install-on-windows).
 
-This build is the Windows installer only. Docker users stay on B1047 for now;
-the next Docker build will include everything below.
+**Docker:** the images are tagged `B1067`. Back up in the app, then run
+`docker compose pull` and `docker compose up -d`.
 
 New:
 
