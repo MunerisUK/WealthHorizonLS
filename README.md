@@ -48,9 +48,12 @@ WealthHorizon runs quietly in the background as a Windows service and starts
 with your PC.
 
 - **Your data** is in `C:\ProgramData\WealthHorizon`. Only administrators can
-  open it. Make backups in the app and copy them to another drive.
+  open it, and **System Admin** shows the folder and how big the database is.
+  Make backups in the app and copy them to another drive, or let **Backup &
+  Restore → Schedule → Back up to OneDrive** write each scheduled backup to
+  your OneDrive.
 - **To update,** download the newer installer and run it over the top. Your data
-  is kept.
+  is kept. WealthHorizon tells you when a newer build is out.
 - **To remove it,** use **Settings → Apps → WealthHorizon**. Your data is kept
   until you delete `C:\ProgramData\WealthHorizon` yourself, so reinstalling picks
   it up again.
@@ -194,16 +197,28 @@ Copy your backups somewhere other than the machine WealthHorizon runs on. A
 backup that sits on the same disk as the database will not help if that disk
 fails.
 
-Your financial data stays on your machine. WealthHorizon contacts the outside
-world only for these things:
+Your financial data stays on your machine. WealthHorizon only reaches out to
+fetch data in, and every connection it makes is listed in the app under
+**Tools → Privacy & connections**: what it is, where it goes, what it sends and
+whether it is on by default. In short:
 
-- **the licence check**, which sends your licence key and an identifier for
-  this machine to the licensing provider
-- **price and exchange rate updates**, which ask public sources for the
-  symbols and currencies you hold
-- **feedback you choose to send**, which carries the build number, the page,
-  your browser and the last error, and never an account name or a figure
+- **the licence check**, once a day, which sends your licence key and an
+  identifier for this installation to the licensing service
+- **the update check**, which sends your licence key to our relay to ask
+  whether a newer build is out
+- **prices and exchange rates**, which ask public sources (Stooq, Yahoo
+  Finance, Coinbase) for the symbols and currencies you hold
+- **tax rate tables and bank logos**, fetched from public websites, carrying
+  nothing about you
+- **feedback you choose to send**, which carries what you write, the build
+  number, the page, your browser and the last error, and never an account name
+  or a figure
 - **an optional daily heartbeat**, off unless you switch it on
+- **bank and broker connections, email and AI assistance**, only if you set
+  them up
+
+None of these carries your balances or transactions. [PRIVACY.md](PRIVACY.md)
+has the detail.
 
 ## Updating
 
@@ -224,10 +239,13 @@ back to an earlier build if a new one causes you a problem.
 
 ## Using it away from home
 
-WealthHorizon works in a browser on a phone, tablet or computer. Reaching it
-from outside your home is up to you. Do not open port 8082 to the internet
-directly: it is plain HTTP. Use a VPN, or a reverse proxy that serves it over
-HTTPS.
+WealthHorizon works in a browser on a phone, tablet or computer, and it is
+safest used on your home network alone. Reaching it from outside your home is
+optional and up to you: read
+[Reaching WealthHorizon from outside your home](docs/remote-access.md) first.
+It sets out the options safest first, recommends a private VPN (which opens
+nothing to the internet), and explains why port 8082 must never be opened to
+the internet: it is plain HTTP.
 
 ## Moving to another machine
 
@@ -255,9 +273,8 @@ first.
 ## Privacy
 
 Your financial data stays on your machine; Muneris cannot see it. The small
-amount of information that leaves your installation — a licence check, optional
-price updates, and any feedback you choose to send — is described in
-[PRIVACY.md](PRIVACY.md).
+amount of information that leaves your installation is listed in the app under
+**Tools → Privacy & connections** and described in [PRIVACY.md](PRIVACY.md).
 
 ## Licence
 
