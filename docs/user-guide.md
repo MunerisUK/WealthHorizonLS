@@ -51,9 +51,15 @@ Finding your way around:
   **People & access**, **Tools** and **System**. It starts across the top; to
   move it, use the four-arrow **Navigation position** button beside your name
   and choose left, right, top or bottom.
-- **My Account → Text size and row spacing** sets the size of the text and,
-  with **Compact**, puts each account and transaction on one line, as Money
-  does.
+- **Compact** row spacing is the starting point in every theme: with a mouse,
+  each account and transaction is on one line, as in Money. On a phone, an
+  account's transactions are two lines each (payee and amount, then date, type
+  and balance); tap one to edit it, or use **⋯** at its end. **My Account →
+  Text size and row spacing** sets the text size and switches to
+  **Comfortable** if you prefer more room.
+- The **Accounts** page has the title and its buttons on one line (including
+  **Import**, for a bank file), with **Totals by currency** across the page
+  beneath; the **ⓘ** at the end of the totals explains them.
 - In a **US household** WealthHorizon uses US spelling and terms (Checking,
   Tax treatment, Favorites); everywhere else it uses UK spelling.
 - **Quick Access** (the lightning-bolt button, or **Ctrl+K** / **Cmd+K**)
@@ -239,7 +245,11 @@ This is where a lot of the work in WealthHorizon has gone, with the UK first.
   if you cannot. If they have their own sign-in on the same WealthHorizon,
   **Viewing: My accounts** at the top of the page lets them switch to your
   accounts and back without signing out, with the same waiting period and
-  code. **Readiness** checks whether your affairs would be usable by
+  code. You choose how long their access lasts (1, 7, 30 or 90 days, or **No
+  end date**, for example under a lasting power of attorney) and, if you like,
+  how often to be emailed a reminder while it is open. Every time you sign in,
+  a bar says who can see your accounts and until when, with **End access now**.
+  **Readiness** checks whether your affairs would be usable by
   someone else on the day they are needed.
 
 ## 9. Reports
