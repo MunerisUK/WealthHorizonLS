@@ -20,6 +20,41 @@ Back up before every update.
 
 ---
 
+## B1388
+
+*26 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1388.exe` on the
+  [B1388 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1388).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1388`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Added or enhanced:
+
+- **A slimmer Accounts header, in every theme.** The title, its description
+  and the buttons now share one line, and Totals by currency is one line
+  across the page instead of a tall box in the corner, so the account list
+  starts much higher up. The explanation of the totals is behind the ⓘ at
+  their end. Import accounts is now a normal **Import** button beside Add
+  account.
+- **Compact rows in every theme, and on your phone.** Light and dark now start
+  with Compact row spacing, as Money does, so far more accounts and
+  transactions fit on the screen. On a phone, an account's register shows each
+  transaction on two lines (payee and amount, then date, type and balance),
+  about ten to a screen instead of one or two cards. Tap a transaction to edit
+  it, or use **⋯** at its end. Comfortable is still under My Account → Text
+  size and row spacing.
+- **You choose how long a nominee's access lasts, and you are reminded of
+  it.** On Nominees, set **Access lasts** for each nominee to 1, 7, 30 or 90
+  days, or **No end date** (for example under a lasting power of attorney).
+  Every time you sign in, a bar says who can see your accounts and until when,
+  and who has asked, with buttons to end access, decline or allow. You can
+  also be emailed a reminder as often as you choose, in days, while their
+  access is open.
+
+---
+
 ## B1382
 
 *26 November 2026*
