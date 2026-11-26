@@ -48,9 +48,9 @@ the [README](../README.md). Using it away from home is covered in
 Finding your way around:
 
 - The menu groups the pages: **Overview**, **Portfolio**, **Tax & Planning**,
-  **People & access**, **Tools** and **System**. Someone new starts with it
-  across the top; to move it, use the four-arrow **Navigation position** button
-  beside your name and choose left, right, top or bottom.
+  **People & access**, **Tools** and **System**. It starts across the top; to
+  move it, use the four-arrow **Navigation position** button beside your name
+  and choose left, right, top or bottom.
 - **My Account → Text size and row spacing** sets the size of the text and,
   with **Compact**, puts each account and transaction on one line, as Money
   does.
@@ -63,6 +63,11 @@ Finding your way around:
 Other people in your household can have their own sign-in. Invite them under
 **System → Family**. A child member can look at the household's accounts but
 not change them.
+
+Someone who keeps their money separately (a brother, say) can have a household
+of their own on the same WealthHorizon: add them under **System Admin → Add
+user**. A household licence counts people, 4 on Standard and 8 on Pro, whichever
+household each is in.
 
 ## 2. Bringing in your Money file
 
@@ -128,8 +133,9 @@ sections**. Open an account to see:
   and gain or loss.
 
 From an account you can **Add**, **Edit** and **Split** transactions, and move
-money between accounts. To read a register as Money does, choose **⋯ →
-Payment and Deposit columns**. A transaction or account you delete can be
+money between accounts. Checking, savings and card registers read as Money
+does, with **Num** after the date and money out and in as **Payment** and
+**Deposit** columns; **⋯ → One Amount column** switches back. A transaction or account you delete can be
 brought back from **Accounts → ⋯ → Recently deleted**. A split keeps its total fixed and counts down what is
 left to allocate, so you cannot save one that does not add up.
 
@@ -230,7 +236,10 @@ This is where a lot of the work in WealthHorizon has gone, with the UK first.
 - **Renewals** reminds you of things that cost money when they lapse:
   insurance, the MOT, a fixed rate ending.
 - **Nominees** lets you name someone who can see (but not change) your accounts
-  if you cannot. **Readiness** checks whether your affairs would be usable by
+  if you cannot. If they have their own sign-in on the same WealthHorizon,
+  **Viewing: My accounts** at the top of the page lets them switch to your
+  accounts and back without signing out, with the same waiting period and
+  code. **Readiness** checks whether your affairs would be usable by
   someone else on the day they are needed.
 
 ## 9. Reports

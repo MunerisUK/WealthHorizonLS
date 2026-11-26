@@ -20,6 +20,58 @@ Back up before every update.
 
 ---
 
+## B1382
+
+*26 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1382.exe` on the
+  [B1382 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1382).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1382`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **The navigation-position button shows in the Money style.** In the top bar
+  of the Money style the button was drawn dark on the navy bar and was hard to
+  see. It now takes the bar's own light colour.
+
+Added or enhanced:
+
+- **Retirement accounts, in a US household.** The Accounts section that holds
+  401(k)s and IRAs, and the account directory report, now say Retirement
+  accounts, the US term. Everywhere else it is still Pensions.
+- **The menu starts across the top.** As Money has it, for everyone who has
+  not chosen a position, not only someone new. A position you have chosen is
+  kept, and phones keep the bottom tabs.
+- **Num straight after Date.** In a register, the check number is now the
+  column after the date, as in Money.
+- **Payment and Deposit columns by default.** Checking, savings and card
+  registers now show money out and money in as two columns, each as a positive
+  figure, in place of a Type column and one signed Amount. ⋯ → One Amount
+  column switches back. Investment registers keep their Action column.
+- **Dividend, not "Div".** Investment actions read in full words: Dividend,
+  Shares transferred in and out, Shares added and removed, in the register and
+  in its filter.
+- **A clear logo on the sign-in screen.** In the light theme the WealthHorizon
+  name nearly disappeared against the blue. The sign-in screen's left panel is
+  now the dark version in every theme, with the white wordmark.
+- **Switch to the accounts of somebody who named you as their nominee, without
+  signing out.** If you have your own sign-in and someone on the same
+  WealthHorizon (a brother with his own household, say) names you as their
+  nominee, "Viewing: My accounts" appears at the top of the page. Choose their
+  accounts there. The same checks as the nominee sign-in apply: you ask first,
+  their waiting period runs unless they allow it sooner, and you enter their
+  six-digit code if they set one. The visit is read-only, lasts an hour and is
+  recorded for them. "Back to my accounts" returns you to your own.
+- **A household licence counts people, not households.** Its 4 people
+  (Standard) or 8 (Pro) can be in any mix of households, so a brother can have
+  his own household on your WealthHorizon. The "1 of 1 household" line has
+  gone from the Licence card. The Adviser and Firm editions still count client
+  households.
+
+---
+
 ## B1378
 
 *26 November 2026*
