@@ -6,7 +6,8 @@ every page in the app has a **Help** button that explains that page in more
 detail.
 
 Installing, updating and moving WealthHorizon to another machine are covered in
-the [README](../README.md).
+the [README](../README.md). Using it away from home is covered in
+[Reaching WealthHorizon from outside your home](remote-access.md).
 
 > **Not financial advice.** The planning, tax and forecast pages work from the
 > figures you enter. They help you think things through. They are not advice,
@@ -31,21 +32,30 @@ the [README](../README.md).
 
 ## 1. First steps
 
-1. Open `http://<your-server>:8082` in a browser.
+1. Open WealthHorizon: on Windows, the **WealthHorizon** shortcut or
+   `http://localhost:8082`; with Docker, `http://<your-server>:8082`.
 2. Choose **Register** and create your account. The first account on a new
    install becomes the **System Administrator**, so make this one yours.
 3. Enter your licence key: WealthHorizon asks for it straight after you
    register. Paste it in and click **Activate**. (If you chose "I'll do this
    later", it is under **System Admin → Licence → Activate on this machine**.) Until a key is active you can look around, but you cannot add or
    change anything.
-4. Turn on **two-factor authentication**: open your profile, then
-   **Security**. It asks for a code from an authenticator app when you sign
-   in. Your finances deserve it.
+4. Turn on **two-factor authentication**: open **My Account** (your name at
+   the foot of the menu) and, under **Two-factor authentication**, choose
+   **Enable**. It asks for a code from an authenticator app when you sign in.
+   Your finances deserve it.
 
 Finding your way around:
 
-- The menu on the left groups the pages: **Overview**, **Portfolio**,
-  **Tax & Planning**, **Tools** and **System**.
+- The menu groups the pages: **Overview**, **Portfolio**, **Tax & Planning**,
+  **People & access**, **Tools** and **System**. Someone new starts with it
+  across the top; to move it, use the four-arrow **Navigation position** button
+  beside your name and choose left, right, top or bottom.
+- **My Account → Text size and row spacing** sets the size of the text and,
+  with **Compact**, puts each account and transaction on one line, as Money
+  does.
+- In a **US household** WealthHorizon uses US spelling and terms (Checking,
+  Tax treatment, Favorites); everywhere else it uses UK spelling.
 - **Quick Access** (the lightning-bolt button, or **Ctrl+K** / **Cmd+K**)
   jumps to any page by name.
 - WealthHorizon works on a phone or tablet as well as a computer.
@@ -56,7 +66,9 @@ not change them.
 
 ## 2. Bringing in your Money file
 
-Go to **Accounts**, open the **⋯** menu and choose **Import from MS Money**.
+Go to **Accounts**, open the **⋯** menu and choose **Import → From another
+program**. As well as Money, it reads files from Quicken, Monarch, YNAB and
+other programs.
 
 WealthHorizon reads:
 
@@ -72,7 +84,8 @@ file. For each one you can change:
 
 - **Type**: current, savings, investment, retirement, credit card, loan,
   mortgage and so on
-- **Wrapper**: ISA, Cash ISA, Lifetime ISA, SIPP, or none
+- **Wrapper** (**Tax treatment** in a US household): ISA, Cash ISA, Lifetime
+  ISA, SIPP, a 401(k), an IRA, or none
 - **Currency** and **Jurisdiction** (where the account is held), and whether it
   is **Offshore**
 
@@ -90,11 +103,23 @@ Money line by line:
   entered. They come across, but no balance counts them, just as in Money.
 
 Splits, memos, payees and categories all come across, and Money's
-`Parent : Child` categories become a proper hierarchy.
+`Parent : Child` categories become a proper hierarchy. Closed accounts come
+across too, closed, with their history; switch on **Show inactive** on
+Accounts to see them.
+
+A large file can take several minutes. The import runs in the background with
+a progress bar, and a second import cannot start while one is running. If you
+need to clear everything and import again, use **Start again** under **Backup &
+Restore → Restore** (My Account and System Admin link to it). It takes a
+complete backup first, which you will find under **Backup & Restore →
+Snapshots**.
 
 ## 3. Accounts and transactions
 
-**Accounts** lists everything you hold. Open an account to see:
+**Accounts** lists everything you hold, in sections: current accounts,
+savings, investments, pensions, property, credit cards, and loans and
+liabilities. To put the sections in another order, choose **⋯ → Arrange
+sections**. Open an account to see:
 
 - **Transactions**, with a **running balance** on every row, as in Money. If
   your statement and WealthHorizon disagree, look for the row where the two
@@ -103,7 +128,9 @@ Splits, memos, payees and categories all come across, and Money's
   and gain or loss.
 
 From an account you can **Add**, **Edit** and **Split** transactions, and move
-money between accounts. A split keeps its total fixed and counts down what is
+money between accounts. To read a register as Money does, choose **⋯ →
+Payment and Deposit columns**. A transaction or account you delete can be
+brought back from **Accounts → ⋯ → Recently deleted**. A split keeps its total fixed and counts down what is
 left to allocate, so you cannot save one that does not add up.
 
 To add statements after the first import, use **Import** with a file from your
@@ -115,7 +142,11 @@ and your holdings are fetched for you. Create the key **read-only** in the
 Trading 212 app: WealthHorizon only ever reads, but a key created with trading
 permissions could place orders in anyone's hands.
 
-Bank connections through **Open Banking** are not switched on yet.
+**Tools → Bank Connections** brings automatic downloads together:
+**SimpleFIN** for US banks and brokers, **Trading 212**, and **Open Banking**
+for UK banks where your administrator has set it up. Automatic connections are
+part of the **Pro** edition; on Standard you import your bank's files as
+above.
 
 ## 4. Payslips
 
@@ -161,8 +192,9 @@ currency, this is the part of Money that WealthHorizon does differently.
 - **Tools → Documents** lists everything in one place. Files can be up to
   25 MB, and you can link each to an account and add a note.
 
-Documents are stored in the `data/documents` folder next to your
-`docker-compose.yml`, so include that folder in your backups.
+Documents are stored with the rest of your data (on Windows, in
+`C:\ProgramData\WealthHorizon`; with Docker, in the `data/documents` folder
+next to your `docker-compose.yml`), so include them in your backups.
 
 ## 7. Planning ahead
 
@@ -222,13 +254,21 @@ Go to **Tools → Backup & Restore**:
 - **Schedule** makes backups automatically, daily, weekly or monthly.
 - **Restore** brings a backup back.
 
-For a scheduled backup to land outside the database, choose **Also write a copy
-to a folder** and enter **`/backups`**. That folder is `data/backups` next to
-your `docker-compose.yml`. Press **Check the folder** before saving.
+- **Snapshots** keeps the backups stored inside WealthHorizon, including the
+  one taken before **Start again**. **Download** saves one as a file.
 
-Then copy `data/backups` (and `data/documents`) to another disk, another
-machine or a cloud drive. A backup on the same disk as the database will not
-help if that disk fails.
+For a scheduled backup to land outside the database, choose **Also write a copy
+to a folder**:
+
+- **On Windows with OneDrive,** press **Back up to OneDrive**. It makes a
+  WealthHorizon Backups folder in your OneDrive and writes each scheduled
+  backup there, encrypted with your backup passphrase.
+- **With Docker,** enter **`/backups`**. That folder is `data/backups` next to
+  your `docker-compose.yml`. Press **Check the folder** before saving, then
+  copy `data/backups` (and `data/documents`) to another disk, another machine
+  or a cloud drive.
+
+A backup on the same disk as the database will not help if that disk fails.
 
 **Download my data**, under **People & access → Account Access**, gives you a
 file of everything WealthHorizon holds about you and your household at any
@@ -241,9 +281,15 @@ time.
 - WealthHorizon checks the key with the licensing service from time to time.
   If your server is offline for a while, it carries on working for a grace
   period before it needs to check in again.
-- If your licence ends, WealthHorizon becomes **read-only**. You can still sign
-  in, see everything and export it. You just cannot add or change anything
-  until a key is active again. Your data is never locked away from you.
+- **A licence buys updates; the version you have keeps working.** When a
+  licence ends, a version released before its end date keeps working for good,
+  and the Licence card says updates have ended. A version released after it is
+  **read-only** until the licence is renewed: you can still sign in, see
+  everything and export it, but not add or change anything. Your data is never
+  locked away from you.
+- If the licence provider reports your key as expired without saying when, the
+  Licence card says so and when it last checked. If you have renewed, press
+  **Check now**.
 - Moving to a new machine: **System Admin → Licence → Move this licence** on
   the old one first, then activate the key on the new one. The
   [README](../README.md#moving-to-another-machine) has the full steps.
@@ -257,7 +303,11 @@ time.
   needing to ask you questions. It never includes an account name, a figure or
   your licence key. **My reports**, underneath, shows where each of your
   reports has got to.
-- **What's New** in the app lists the changes in your build.
+- **What's new** in the app lists the changes in your build, and WealthHorizon
+  tells you when a newer build is out.
+- **Privacy & connections**, under Tools, lists every connection WealthHorizon
+  makes to the internet: what it is, where it goes, what it sends and whether
+  it is on by default.
 
 Please use the Feedback page rather than a public issue on GitHub for anything
 that involves your data. Public issues here are only for problems installing or
