@@ -233,6 +233,17 @@ This is where a lot of the work in WealthHorizon has gone, with the UK first.
   domiciled over time, and **Days present** counts days in each country against
   the residence tests (the UK Statutory Residence Test among them). Useful if
   you live, work or hold money in more than one country.
+- **Tax lines.** On **Categories**, mark the categories a tax return asks
+  about and choose the line each one feeds: a short set for the US or the UK,
+  plus any lines of your own (a Schedule C business, a spouse's W-2, a second
+  property). **Export categories (CSV)** and **Import categories (CSV)** move
+  the whole list in and out of a spreadsheet; an import is previewed first.
+  Importing a Microsoft Money file brings Money's tax categories and their
+  lines with it.
+- **Tools → Tax Software Export** adds up a tax year by tax line, Personal or
+  Business, as a TXF file for US tax software such as H&R Block or TurboTax,
+  and as a CSV for anyone. Anything it cannot put in the file is listed so
+  you can enter it by hand.
 - **CGT Optimiser** helps you use your capital gains allowance, lot by lot.
   Gains inside an ISA or pension are left out, because tax cannot reach them.
 - **Irish funds**: a fund or ETF domiciled in Ireland is taxed as if sold every
@@ -258,6 +269,15 @@ This is where a lot of the work in WealthHorizon has gone, with the UK first.
 spending, spending by category and payee, budgets, account balances, loan
 terms, investment performance and tax-related transactions. You can customise
 a report and print it or save it as a PDF.
+
+**Tax Summary** puts one person's tax year together from your own records:
+where they are recorded as resident and the days they recorded in each
+country, with anything inconsistent marked as worth checking; their income,
+deductions and tax already paid under each tax line, by the country each
+account is in; and the household's capital gains. **Open in the Tax
+calculator** takes the figures to the calculator, and you can choose to see
+its estimate on the summary. It is information from your own records, not tax,
+legal or financial advice, and it does not decide residence or what you owe.
 
 **Wealth Report** produces a summary of everything you hold at a point in time.
 
