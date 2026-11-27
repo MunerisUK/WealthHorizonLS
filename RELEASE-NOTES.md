@@ -1704,6 +1704,26 @@ Fixed:
 
 ---
 
+## B1085
+
+*17 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1085.exe` on the
+  [B1085 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1085).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1085`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **Table rows three lines tall on an iPad.** Sized to its content, a table
+  could shrink a column by breaking what was in it: on Prices the action icons
+  stacked down a column, an ISIN split in two and SEDOL became "SEDO L". A
+  heading now stays on one line, an actions column takes only the width its
+  buttons need, and a code column is never broken.
+
+---
+
 ## B1069: the licence key is asked for first
 
 *16 November 2026*
