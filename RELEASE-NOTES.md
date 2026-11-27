@@ -20,6 +20,62 @@ Back up before every update.
 
 ---
 
+## B1436
+
+*27 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1436.exe` on the
+  [B1436 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1436).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1436`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Added or enhanced:
+
+- **Imports spot the other side of a transfer.** When a statement holds a
+  transfer whose other side is already in another account, the import wizard
+  now stops before saving and asks: link the two as one transfer, keep them
+  apart, or skip the row. It shows both entries, how strong the match is and
+  why. A strong match comes chosen; nothing is linked without your yes, and
+  nothing already in WealthHorizon is changed.
+- **What the plan knows lists a credit card once, as its balance.** Repeating
+  purchases charged to a card no longer fill What repeats one by one. The card
+  shows its balance under How your cards bill and says how many repeating
+  items it holds; they are still on Recurring.
+- **Delete regular items from What the plan knows.** Each regular item under
+  What repeats has a Delete button, as on Recurring and the Month-end plan's
+  list. It asks first, and the item can be restored from Recently deleted.
+- **Ask Alfred.** A new chat button above Help, bottom right on every page,
+  answers questions about your own spending: "How much have I spent on
+  subscriptions this month, and who to?", "How much did I spend on groceries
+  last month?", "How much did I spend in October?". The answer comes in words
+  with a table of who was paid, how often and how much, added up the same way
+  as Where the money goes. It works with AI off; with Ask Alfred switched on
+  under AI Assistance, your model is sent only the question, never your
+  figures.
+- **Money imports bring transfers in as transfers.** When a Money file, a QIF
+  file of several accounts, or another program's file holds both sides of a
+  transfer, they are now joined as one transfer instead of two unrelated rows,
+  so the money no longer counts as spending out of one account and income into
+  the other. And when you import onto an account you already have, a row whose
+  other side is already in another account is offered as in a file import:
+  link as one transfer, keep apart, or skip.
+- **Transfers from a bank feed are marked new.** A bank feed or broker sync
+  never links a transfer on its own. The pairs it brings in now show first on
+  the Accounts page's transfers card, marked "New since your last sync", and
+  in Needs attention, until that account syncs again.
+- **Alfred answers more.** As well as spending, Ask Alfred now tells you which
+  bills are due ("What bills are due in the next 30 days?"), what you are
+  worth and how that has changed ("How has my net worth changed this year?"),
+  and how your investments have done ("How have my investments done?"). Each
+  answer comes from the page that already shows those figures, with a table
+  beside it.
+- **The demo household pays for its subscriptions.** Netflix, Spotify,
+  Disney+, a gym, Microsoft 365 and a newspaper are now paid monthly in the
+  demo, so Ask Alfred's subscriptions question has something to show.
+
+---
+
 ## B1422
 
 *27 November 2026*
