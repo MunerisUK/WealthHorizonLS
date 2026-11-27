@@ -20,6 +20,94 @@ Back up before every update.
 
 ---
 
+## B1406
+
+*27 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1406.exe` on the
+  [B1406 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1406).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1406`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **The page you are on shows in the menus in the Money style.** Opening a top
+  menu in the Money style, the page you were on (for example Dividend Tracker)
+  was drawn white on the white menu and looked as if it had vanished. It now
+  shows in blue, in bold, on a light blue band; light and dark mark it the
+  same way in their own colours.
+- **Colour back in the register.** With Payment and Deposit columns, every
+  amount had lost its colour. Payments are red again, deposits green, and a
+  balance below nought red, on a computer and on a phone.
+- **Clearer bank logos.** Chase's logo now comes from chase.com rather than
+  the JPMorgan Chase company site, so it is the Chase octagon you know, and in
+  Compact the bank's mark beside an account is a little larger (20px, the
+  height of the line) so you can make it out.
+- **Split transactions with deductions, as Money's paycheck splits have
+  them.** A Social Security payment split into the benefit less Medicare and a
+  penalty showed the deductions as if they were added, and **Edit split**
+  could not save it. Each line now shows with its sign (Medicare as −$202.90),
+  Edit split opens with deductions marked by **−** and keeps them as
+  deductions, and $0.00 placeholder lines are allowed. The **Rest** button is
+  now **Fill rest**, with a tooltip saying it puts what is left to allocate in
+  that line.
+- **The cleared mark is readable in dark mode.** In an account's register, the
+  C beside a cleared transaction was drawn almost black, so on the dark theme
+  you could barely see it. It now takes the same colour as the rest of the
+  text, in every theme.
+
+Added or enhanced:
+
+- **Pension: every figure in the answer is the same large size.** The tax-free
+  cash and the pot at retirement are now as large as the monthly income, which
+  keeps its colour as the headline.
+- **Tax lines for the UK, and your own lines for anything more.** A UK
+  household now chooses each tax-related category's box from a short set of
+  Self Assessment lines (SA100 interest, dividends, pensions, Gift Aid and tax
+  paid; SA102 employment; SA103 self-employment; SA105 property), named by
+  form and what the box asks for. The built-in lists stay short on purpose.
+  For anything more, such as a Schedule C business, a spouse's W-2 or a second
+  property, add **your own tax lines** on the Categories page: a code, a
+  description, the form and, for a US line, its TXF number for tax software.
+  The US lines now carry their official TXF numbers too.
+- **Categories in and out as a spreadsheet.** **Export categories (CSV)**
+  writes your whole category list with each category's tax-related and
+  business marks, its tax line, and your own lines spelled out. **Import
+  categories (CSV)** reads the same layout back: it shows what it will add and
+  change, and any rows it will leave out, before anything is written. A full
+  set, such as the one you kept in Money, can be built in a spreadsheet and
+  brought in at once.
+- **A Business mark on tax-related categories**, as Money had, ready for the
+  tax software export's Personal or Business choice.
+- **Your Money tax categories come across.** Importing a Money file now brings
+  every category Money marked tax-related or business, with the tax line Money
+  gave it, including categories you have not used yet. A line that matches one
+  of the built-in US lines lands on it; any other, such as a Schedule C
+  expense or a spouse's W-2, becomes one of your own tax lines, named as the
+  tax form names it. Anything you had already set is kept. The import tells
+  you how many came across.
+- **Tax Software Export, as Money had.** **Tools → Tax Software Export** adds
+  up a tax year by tax line from the categories you have marked tax-related,
+  Personal or Business, and gives you a **TXF file** to import into H&R Block,
+  TurboTax and similar US tax software, and a **CSV** of the same totals for
+  any household, the UK included. Anything that could not go in the file, such
+  as a line tax software has no number for, is listed for you to enter by
+  hand. The totals come from your own records and are not tax advice: check
+  them before you file.
+- **Tax Summary.** **Reports → Tax Summary** puts a person's tax year together
+  from your own records: where they are recorded as resident and the days they
+  recorded in each country, with anything that looks inconsistent marked as
+  worth checking; their income, deductions and tax already paid under each tax
+  line, at their share of each account and by the country each account is in;
+  and the household's capital gains. **Open in the Tax calculator** takes the
+  figures straight to the calculator, and you can choose to see the
+  calculator's estimate on the summary too. It says plainly, on screen and in
+  the CSV and printout, that it is not tax, legal or financial advice and does
+  not decide residence or what you owe.
+
+---
+
 ## B1388
 
 *26 November 2026*
