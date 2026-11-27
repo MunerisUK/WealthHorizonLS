@@ -20,6 +20,90 @@ Back up before every update.
 
 ---
 
+## B1422
+
+*27 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1422.exe` on the
+  [B1422 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1422).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1422`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **The figures in a Stocks & Shares account line up.** In the positions
+  table, the quantity, price, cost, value and income now sit on one line, and
+  the average cost and the day's move sit under their own figures instead of
+  drifting to the left.
+- **Asset Allocation's total matches Gross assets.** The By Asset Class donut
+  said £4M beside Gross assets of £3M, because what you owe was drawn as a
+  slice and its shares came to more than 100%. The classes are now what you
+  own; the Net worth tile says what is owed instead. The home page's
+  allocation donut is fixed too.
+- **Plain links can be read in dark mode.** Links in a sentence, such as Add a
+  price on Data health or Categories on Tax summary, were the browser's dark
+  blue. They now take the theme's link colour.
+- **Small things.** The Accounts filter headings say Country, Expat and
+  Wrapper in full. On Family, the Role choice no longer runs over Create
+  invite. Add transaction lists its types in words (Shares removed, not
+  REMOVE_SHARES). The Consumer Duty bars say "1 client". A system
+  administrator who manages nothing no longer sees a Management menu whose
+  pages sent them home.
+- **The demo's salary is income again.** In the demo household, the Month-end
+  plan listed Monthly Salary as a bill of −£8,500. The salary and bonus are
+  now money coming in. Savings top-ups, ISA and pension contributions,
+  mortgages, car finance and card payments are transfers from the account that
+  pays them.
+
+Added or enhanced:
+
+- **Delete regular items from the Month-end plan list.** Every entry in the
+  list now has a Delete button, not only one-offs. Deleting a regular item,
+  such as a duplicate bill, removes it from every month and from Recurring, so
+  you are asked first; to skip it just this once, use Leave out.
+- **Undo deleting a regular item.** A regular item deleted on Recurring or
+  from the Month-end plan's list, or a one-off entry, now goes into Recently
+  deleted (Accounts → ⋯), like a deleted transaction. Restore puts it back
+  with its changes for single months, matched again to the transactions that
+  paid it.
+- **The third look is now called Blue mode.** The look after light and dark
+  has a new name. It looks the same, and if you use it, it stays chosen.
+- **The Risk Pyramid's lists are tighter.** Each holding in a tier now takes
+  two lines instead of three: its name with its value and share side by side
+  on the right, then why it is in that tier with Move… on the right.
+- **The WealthHorizon logo takes you home.** Click it, at the top left or at
+  the top of the side rail, to go back to your home page from anywhere.
+- **Compact view uses less empty space everywhere.** It used to tighten table
+  rows only. Now panels and cards have less padding, the total tiles at the
+  top of pages are shorter, and plain tables follow the same row height.
+  Several pages no longer leave much of the screen empty: Alerts, Tax summary
+  and Tax export use the full width, Bank connections fit five to a row,
+  Institutions, Payees and expected items are one line each, and Needs
+  attention, Planning and Goals are tighter. With a mouse, a tab bar is one
+  line high, with each icon beside its label.
+- **Cash flow: one line per account.** What each account will hold lists each
+  account on one line instead of in its own box: its balance now, its lowest
+  point and the day, and what is due. The Horizon choice sits on the title
+  line.
+- **Add transaction knows the instrument.** In an investment account that
+  holds one instrument, a new transaction starts on it, so you do not have to
+  choose it.
+- **More pages use less space.** What the plan knows shows each fact in two
+  lines instead of five. Asset Allocation draws each class and region as one
+  row: its name, its bar, its amount and its share. Data health says a section
+  with nothing wrong on one line. Consumer Duty's tiles and risk bars are
+  closer together, with each severity beside its count. Each report's Run or
+  Open button sits on its title line. Rebalance shows where each suggestion
+  stands on its title line. Family shows a date of birth after the name. The
+  tax calculator puts its fields two to a row when it has the room.
+- **Readiness and System Admin use less space.** Each pension's expression of
+  wish is one row, under one heading row, instead of repeating Who, Dated and
+  The form for every pension. The System Admin platform settings sit in three
+  columns (Application, Email, Open Banking) instead of one narrow one.
+
+---
+
 ## B1406
 
 *27 November 2026*
@@ -351,7 +435,7 @@ Fixed:
 
 - **The all releases link on What's new can be read in every skin.** It kept
   the browser's own dark blue, which all but vanished on the dark skin and on
-  the Money 2005 skin's blue title band. It now takes the heading's text
+  the Blue mode skin's blue title band. It now takes the heading's text
   colour, underlined.
 - **Dropping a file onto an import box reads it.** The Import, Import
   transactions, Import accounts and balance-history boxes said "Drop a file"
@@ -430,14 +514,14 @@ Added or enhanced:
   dated after today, the ones the balance leaves out until their date, has a
   light grey background, so they stand apart whichever way the register is
   sorted, newest first included. Every skin has its own grey: light, dark and
-  Money 2005.
+  Blue mode.
 - **The release notes page has a theme picker.** In its title bar choose
   **System**, which follows your device's light or dark setting, **Light**,
-  **Dark** or **Money 2005**, the same as the app's skins. The page remembers
+  **Dark** or **Blue mode**, the same as the app's skins. The page remembers
   your choice next time you open it.
 - **Compact rows.** Profile → Text size and row spacing has Row spacing:
   Comfortable or Compact. Compact fits more accounts and transactions on the
-  screen, as Money does. Money 2005 starts compact until you choose.
+  screen, as Money does. Blue mode starts compact until you choose.
 - **Create a category as you categorise.** Typing a name no category has into
   a transaction's Category now offers "Create category: …" first, and the
   field says it is created when you save. (Typing a new name always created
@@ -1168,10 +1252,10 @@ Fixed:
   password-protected. Enter the password…" with nowhere to enter it. The
   password error is now found inside the wrapping, and the tests lock a Money
   file and send it through the real engine.
-- **"Show inactive" can be seen in the Money 2005 look.** On Accounts the
+- **"Show inactive" can be seen in the Blue mode look.** On Accounts the
   switch sat on the navy title banner in dark grey and was all but invisible.
   It is now light on the navy, and a white track with a navy thumb when on.
-- **Everything on Money 2005's blue banner can be read.** An account page's
+- **Everything on Blue mode's blue banner can be read.** An account page's
   name, its back arrow and its subtitle were dark grey on the navy banner and
   all but invisible; on an investment account **Transfer cash** was white on
   white; and the subtitles on Planner, Planning, Profile and Renewals were
@@ -1187,12 +1271,12 @@ Fixed:
 - **A long account name is shown in full at the top of its page.** The name is
   a button (it opens the account switcher), and the title row held every
   button in it to one height so the controls line up; a name long enough to
-  wrap lost its second line. Sooner in Money 2005, whose Tahoma is wider, but
+  wrap lost its second line. Sooner in Blue mode, whose Tahoma is wider, but
   in every skin.
-- **Money 2005's text is no longer larger than the other looks'.** Money is
-  set in Tahoma at the same sizes as light and dark, and Tahoma is the bigger
-  face (its x-height is about 9% taller), so a tester found it too large. With
-  a mouse it now draws itself at 92%; on a touch screen it stays full size so
+- **Blue mode's text is no longer larger than the other looks'.** Money is set
+  in Tahoma at the same sizes as light and dark, and Tahoma is the bigger face
+  (its x-height is about 9% taller), so a tester found it too large. With a
+  mouse it now draws itself at 92%; on a touch screen it stays full size so
   its controls stay large enough to tap.
 - **The top menu bar clipped its last groups, and the side rail's foot took a
   third of the rail.** The menu strip was never allowed to be narrower than
@@ -1617,26 +1701,6 @@ Fixed:
   file is read day-first and the import preview says so. An ISO date is no
   longer read twenty-one years out, and 31 February is rejected rather than
   rolled into March.
-
----
-
-## B1085
-
-*17 November 2026*
-
-- **Windows:** `WealthHorizon-Setup-B1085.exe` on the
-  [B1085 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1085).
-  Run it over the top of the build you have; your data is kept.
-- **Docker:** tag `B1085`. Back up in the app, then run `docker compose pull`
-  and `docker compose up -d`.
-
-Fixed:
-
-- **Table rows three lines tall on an iPad.** Sized to its content, a table
-  could shrink a column by breaking what was in it: on Prices the action icons
-  stacked down a column, an ISIN split in two and SEDOL became "SEDO L". A
-  heading now stays on one line, an actions column takes only the width its
-  buttons need, and a code column is never broken.
 
 ---
 

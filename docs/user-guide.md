@@ -50,13 +50,16 @@ Finding your way around:
 - The menu groups the pages: **Overview**, **Portfolio**, **Tax & Planning**,
   **People & access**, **Tools** and **System**. It starts across the top; to
   move it, use the four-arrow **Navigation position** button beside your name
-  and choose left, right, top or bottom.
+  and choose left, right, top or bottom. The **WealthHorizon logo** takes you
+  back to your home page from anywhere.
+- There are three looks: **Light**, **Dark** and **Blue mode**.
 - **Compact** row spacing is the starting point in every theme: with a mouse,
   each account and transaction is on one line, as in Money. On a phone, an
   account's transactions are two lines each (payee and amount, then date, type
   and balance); tap one to edit it, or use **⋯** at its end. **My Account →
   Text size and row spacing** sets the text size and switches to
-  **Comfortable** if you prefer more room.
+  **Comfortable** if you prefer more room. Compact also tightens panels, cards
+  and the total tiles at the top of pages, so more fits on the screen.
 - The **Accounts** page has the title and its buttons on one line (including
   **Import**, for a bank file), with **Totals by currency** across the page
   beneath; the **ⓘ** at the end of the totals explains them.
@@ -141,8 +144,9 @@ sections**. Open an account to see:
 From an account you can **Add**, **Edit** and **Split** transactions, and move
 money between accounts. Checking, savings and card registers read as Money
 does, with **Num** after the date and money out and in as **Payment** and
-**Deposit** columns; **⋯ → One Amount column** switches back. A transaction or account you delete can be
-brought back from **Accounts → ⋯ → Recently deleted**. A split keeps its total fixed and counts down what is
+**Deposit** columns; **⋯ → One Amount column** switches back. A transaction, an account or a regular item (from
+Recurring or the Month-end plan) you delete can be brought back from
+**Accounts → ⋯ → Recently deleted**. A split keeps its total fixed and counts down what is
 left to allocate, so you cannot save one that does not add up.
 
 To add statements after the first import, use **Import** with a file from your
