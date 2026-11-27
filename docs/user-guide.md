@@ -151,7 +151,11 @@ left to allocate, so you cannot save one that does not add up.
 
 To add statements after the first import, use **Import** with a file from your
 bank. Common formats work, including OFX, QFX, QIF, CSV and PDF card
-statements. Rows you have already imported are recognised and skipped.
+statements. Rows you have already imported are recognised and skipped. Where a
+row is one side of a transfer whose other side is already in another account,
+the import asks whether to link the two as one transfer, keep them apart or
+skip the row; nothing is linked without your yes. A Money file that holds both
+sides of a transfer brings them in as one transfer.
 
 If you hold shares with **Trading 212**, you can connect it with an API key
 and your holdings are fetched for you. Create the key **read-only** in the
@@ -340,6 +344,12 @@ time.
 ## 12. Help and feedback
 
 - **Help**, in the top bar, explains the page you are on.
+- **Ask Alfred**, the chat button above Help at the bottom right, answers
+  questions about your own money in plain words: what you spent on
+  subscriptions this month, which bills are due, how your net worth has
+  changed, how your investments have done. It works with AI switched off; if
+  you switch it on under **AI Assistance**, your AI model is sent only your
+  question, never your figures.
 - **Feedback**, the speech-bubble button beside Help, sends me a bug report or
   an idea from any page. It includes the build number, the page, your browser
   and the last error the app saw, so I can usually fix a problem without
