@@ -20,6 +20,40 @@ Back up before every update.
 
 ---
 
+## B1438
+
+*28 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1438.exe` on the
+  [B1438 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1438).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1438`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Fixed:
+
+- **An account's name fits an iPhone.** At the top of an account on a phone,
+  the name was held to just over half the screen, so "Barclays Martin Current
+  Account" stood one word to a line with the rest of the screen empty. It now
+  uses the full width.
+- **AI Vulnerability Scoring fits the screen.** A client's score factors stood
+  on one line and pushed the table's right-hand columns out of sight. They now
+  wrap, to three lines at most, with the whole list in the tooltip.
+- **Pages fit an iPad.** On an iPad the accounts list, Recurring, Price
+  Management, Stocks & Shares, Cash flow and others ran off the right of the
+  screen, in Compact and in Comfortable. Where a table has no room for every
+  column it now leaves out the ones you can do without (on Accounts, Expat,
+  then Country, which moves under the account's name, then Txns and Updated),
+  so Balance and the buttons are always on screen. System Admin's users and
+  households tables, AI Vulnerability Scoring and My Book do the same, and the
+  buttons on Wealth Over Time wrap rather than run off the card. Menus across
+  the top that do not fit go into **More** at the end of the bar.
+- **An adviser's client list is a drop-down.** "View as advisor" showed a
+  button for every client: 29 clients filled seven rows on an iPad. With more
+  than five it is now one drop-down, Choose a client.
+
+---
+
 ## B1436
 
 *27 November 2026*
