@@ -20,6 +20,20 @@ Back up before every update.
 
 ---
 
+## B1442
+
+*28 November 2026*
+
+- **Windows:** `WealthHorizon-Setup-B1442.exe` on the
+  [B1442 release](https://github.com/MunerisUK/WealthHorizonLS/releases/tag/B1442).
+  Run it over the top of the build you have; your data is kept.
+- **Docker:** tag `B1442`. Back up in the app, then run `docker compose pull`
+  and `docker compose up -d`.
+
+Behind-the-scenes changes only; nothing you will notice.
+
+---
+
 ## B1438
 
 *28 November 2026*
